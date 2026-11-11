@@ -23,8 +23,7 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .site-header {position:sticky;top:0;z-index:1040;background:rgba(9,11,19,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(190,178,247,.12)}
 .site-navbar {min-height:84px;padding:12px 0}
 .brand {display:flex;align-items:center;gap:12px;color:#fff!important;margin-right:23px}
-.brand-mark {display:grid;place-items:center;background:linear-gradient(145deg,#8267e7,#b59cff);color:#130f25;width:44px;height:44px;border-radius:13px;font-weight:900;font-size:16px;letter-spacing:-2px;box-shadow:0 3px 24px rgba(163,124,255,.3)}
-.brand-mark span {font-size:24px;line-height:0;color:white;letter-spacing:0}
+.brand-logo {display:block;width:62px;height:62px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 7px rgba(170,132,255,.32))}
 .brand-name {font-size:13px;font-weight:900;letter-spacing:.085em;line-height:1.17}
 .brand-name b {color:var(--nw-accent)}
 .brand-name small {display:block;margin-top:5px;font-size:9px;font-weight:650;letter-spacing:.31em;color:#aaa6c5}
@@ -75,10 +74,6 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .visual-label {position:absolute;top:47px;right:54px;z-index:1;display:flex;gap:13px;align-items:center;color:#d0d2e4;font-size:10px;line-height:1.2;letter-spacing:.23em}
 .visual-label b {color:#fff;font-size:14px;letter-spacing:.14em}
 .visual-cross {font-size:36px;color:var(--nw-teal);text-shadow:0 0 20px rgba(92,230,219,.5)}
-.fps-label {position:absolute;right:56px;bottom:30px;z-index:2;text-align:right}
-.fps-label b {display:block;font-size:32px;line-height:1;color:#fff}
-.fps-label b span {color:var(--nw-teal);font-size:14px}
-.fps-label small {font-size:9px;letter-spacing:.15em;color:#c4c1d8}
 .hero-ticker {padding:17px 4px;display:flex;gap:26px;justify-content:space-between;align-items:center;color:#807d98;font-size:10px;font-weight:850;letter-spacing:.1em;white-space:nowrap;overflow:hidden}
 .hero-ticker b {color:var(--nw-accent);font-size:14px}
 /* Advantage cards */
@@ -268,8 +263,6 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
  .visual-label {right:17px;top:30px;font-size:8px}
  .visual-label b {font-size:10px}
  .visual-cross {font-size:24px}
- .fps-label {right:18px;bottom:15px}
- .fps-label b {font-size:24px}
  .hero-perks {margin-top:25px;gap:9px;font-size:10px}
  .hero-ticker {gap:14px;font-size:9px;justify-content:flex-start}
  .section-pad {padding:65px 0}
@@ -285,7 +278,7 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
 }
 @media (max-width:479.98px) {
  .container {padding-left:18px;padding-right:18px}
- .brand-mark {width:38px;height:38px}
+ .brand-logo {width:48px;height:48px}
  .brand-name {font-size:11px}
  .hero-copy {padding:39px 20px 270px}
  .hero-title {font-size:clamp(36px,10.2vw,49px)}
@@ -305,3 +298,9 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
  .footer-bottom {line-height:1.7}
 }
 @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}*,*:before,*:after {transition:none!important;animation:none!important}}
+
+/* v2: compact tariffs without the removed description paragraphs */
+.tariff-card .tariff-head {margin-bottom:32px}
+.tariff-card .tariff-price {margin-top:28px}
+.tariff-card .tariff-price span {white-space:nowrap}
+.brand-logo:hover {filter:drop-shadow(0 0 11px rgba(176,145,255,.56))}

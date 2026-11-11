@@ -11,7 +11,7 @@
   const zones = {
     standard: { label: 'Standard Zone', coefficient: 1 },
     vip: { label: 'VIP Lounge', coefficient: 1.5 },
-    team: { label: 'Team Arena', coefficient: 1.2 }
+    team: { label: 'Full Room · 5 ПК', coefficient: 5, unit: 'room' }
   };
   const byId = (id) => document.getElementById(id);
   const formatMoney = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -40,6 +40,7 @@
     const summaryTariff = byId('summary-tariff');
     const summaryDate = byId('summary-date');
     const summaryPrice = byId('summary-price');
+    const summaryPriceLabel = byId('summary-price-label');
     date.min = today();
     const params = new URLSearchParams(location.search);
     if (zones[params.get('zone')]) zone.value = params.get('zone');
@@ -50,6 +51,7 @@
       const chosenTariff = tariffs[tariff.value];
       summaryZone.textContent = chosenZone ? chosenZone.label : 'Не выбрана';
       summaryTariff.textContent = chosenTariff ? chosenTariff.label : 'Не выбран';
+      if (summaryPriceLabel) summaryPriceLabel.textContent = chosenZone?.unit === 'room' ? 'Стоимость за комнату' : 'Стоимость за место';
       summaryPrice.textContent = chosenZone && chosenTariff
         ? formatMoney(Math.round(chosenTariff.price * chosenZone.coefficient)) : '—';
       if (tariff.value === 'night') {
