@@ -304,3 +304,9 @@ button {transition:transform .2s ease,background .2s ease,border-color .2s ease}
 .tariff-card .tariff-price {margin-top:28px}
 .tariff-card .tariff-price span {white-space:nowrap}
 .brand-logo:hover {filter:drop-shadow(0 0 11px rgba(176,145,255,.56))}
+
+/* Бронирование: правая карточка должна прокручиваться как обычный блок, без прилипания. */
+.summary-panel, .summary-panel.sticky-lg-top {
+  position: static !important;
+  top: auto !important;
+}
